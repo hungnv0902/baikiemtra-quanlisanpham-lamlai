@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-public class ProductManagerImpl implements ProductManager<Product> {
+public class ProductManagerImpl<pu> implements ProductManager<Product> {
     ArrayList<Product> listProducts = new ArrayList<>();
 
     public ProductManagerImpl() {
@@ -82,4 +82,14 @@ public class ProductManagerImpl implements ProductManager<Product> {
 
     }
 
+    public void display(Product product) {
+        System.out.println("ID: " + product.getId()
+                + " | Name: " + product.getName()
+                +" | Description: " + product.getDescription()
+                +" | Price: "
+                +product.getPrice()
+                + "| Status "
+                + product.isStatus()
+                +"\n");
+    }
 }

@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -50,13 +51,20 @@ public class Main {
                     break;
 
                 case 5:
-                    productManager.displayProduct();
+                    ArrayList<Product> listProduct = productManager.displayProduct();
+                    for (Product product: listProduct) {
+                        if(listProduct.size() != 0) {
+                            productManager.display(product);
+                        }
+
+                    }
                     break;
 
                 case 6:
                     System.out.println("Nhap ID");
                     int id1 = input.nextInt();
-                    productManager.searchProduct(id1);
+                    Product product = productManager.searchProduct(id1);
+                    productManager.display(product);
                     break;
 
 
